@@ -1,0 +1,34 @@
+<div class="author">
+    <h1 class="author__heading">Hi, I'm Albion</h1>
+    <p class="author__body">Web developer and drummer</p>
+</div>
+
+<img src="/img/pexels-irina-iriser-1366957.jpg" alt="" class="main__img" width="586" height="390">
+
+<section class="articles">
+    <h2 class="articles__heading">Latest Posts</h2>
+
+    <ul class="article-ul">
+        <% data.forEach(post=> { %>
+
+            <li>
+                <a href="/post/<%= post._id %>">
+                    <span>
+                        <%= post.title %>
+                    </span>
+                    <span class="article-list__date">
+                        <%= post.createdAt.toDateString() %>
+                    </span>
+                </a>
+            </li>
+
+            <% }) %>
+    </ul>
+
+    <% if (nextPage !== null) { %>
+        <a href="/?page<%= nextPage %>" class="pagination">&lt; View Older Posts</a>
+        <% } %>
+
+
+
+</section> 
